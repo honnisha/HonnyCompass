@@ -1,0 +1,47 @@
+
+north: '&e&lN'
+east: '&e&lE'
+south: '&e&lS'
+west: '&e&lW'
+
+north-selected: '&a&lN'
+east-selected: '&a&lE'
+south-selected: '&a&lS'
+west-selected: '&a&lW'
+
+fill: '&7═'
+fill-center: '&7╪'
+
+select: '&f╪'
+
+default:
+  compass-target: '&f◇'
+  compass-target-selected: '&f◆'
+
+  compass-target-above: '&f△'
+  compass-target-selected-above: '&f▲'
+
+  compass-target-below: '&f▽'
+  compass-target-selected-below: '&f▼'
+
+selected:
+  compass-target: '&2◇'
+  compass-target-selected: '&a◆'
+
+  compass-target-above: '&2△'
+  compass-target-selected-above: '&a▲'
+
+  compass-target-below: '&2▽'
+  compass-target-selected-below: '&a▼'
+
+title-prefix: '&6'
+
+symbol-start: '&e&l╠'
+symbol-end: '&e&l╣'
+
+bar-color: white
+bar-style: solid
+
+ticks-update-compass: 2
+
+y-difference-icons: 10

@@ -1,0 +1,13 @@
+name: HonnyCompass
+version: '${project.version}'
+main: honny.HonnyCompass
+api-version: 1.18
+
+softdepend:
+  - AuthMe
+  - BetonQuest
+
+commands:
+  honnycompass:
+    usage: '§e/honnycompass'
+    aliases: [ hcompass ]
