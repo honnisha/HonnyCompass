@@ -5,21 +5,26 @@ import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarStyle;
 import org.bukkit.configuration.file.FileConfiguration;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 public class MainConfigManager {
     @Getter private final String north;
+    @Getter private final String northSelected;
+
     @Getter private final String east;
+    @Getter private final String eastSelected;
+
     @Getter private final String south;
+    @Getter private final String southSelected;
+
     @Getter private final String west;
+    @Getter private final String westSelected;
 
     @Getter private final String fill;
     @Getter private final String fillCenter;
 
-    @Getter private final String select;
+    @Getter private final String fillSelect;
+    @Getter private final String fillCenterSelect;
 
     @Getter private final String compassTarget;
     @Getter private final String compassTargetSelected;
@@ -47,17 +52,32 @@ public class MainConfigManager {
     @Getter private final double yDifferenceIcons;
 
     @Getter private final List<String> originCompass;
+    @Getter private final Map<String, String> replacers = new HashMap<>();
 
     public MainConfigManager(FileConfiguration config) {
         south = getString(config, "south", "&e&lS");
+        southSelected = getString(config, "north-selected", "&6&lS");
+        replacers.put(south, southSelected);
+
         west = getString(config, "west", "&e&lW");
+        westSelected = getString(config, "west-selected", "&6&lS");
+        replacers.put(west, westSelected);
+
         north = getString(config, "north", "&e&lN");
+        northSelected = getString(config, "north-selected", "&6&lS");
+        replacers.put(north, northSelected);
+
         east = getString(config, "east", "&e&lE");
+        eastSelected = getString(config, "east-selected", "&6&lS");
+        replacers.put(east, eastSelected);
 
         fill = getString(config, "fill", "&7═");
-        fillCenter = getString(config, "fill-center", "&7╪");
+        fillSelect = getString(config, "fill-select", "&f═");
+        replacers.put(fill, fillSelect);
 
-        select = getString(config, "select", "&7╪");
+        fillCenter = getString(config, "fill-center", "&7╪");
+        fillCenterSelect = getString(config, "fill-center-select", "&f╪");
+        replacers.put(fillCenter, fillCenterSelect);
 
         compassTarget = getString(config, "default.compass-target", "&2□");
         compassTargetSelected = getString(config, "default.compass-target-selected", "&a■");

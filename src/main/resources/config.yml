@@ -1,18 +1,21 @@
 
 north: '&e&lN'
-east: '&e&lE'
-south: '&e&lS'
-west: '&e&lW'
+north-selected: '&6&lN'
 
-north-selected: '&a&lN'
-east-selected: '&a&lE'
-south-selected: '&a&lS'
-west-selected: '&a&lW'
+east: '&e&lE'
+east-selected: '&6&lE'
+
+south: '&e&lS'
+south-selected: '&6&lS'
+
+west: '&e&lW'
+west-selected: '&6&lW'
 
 fill: '&7═'
-fill-center: '&7╪'
+fill-select: '&f╩'
 
-select: '&f╪'
+fill-center: '&7╪'
+fill-center-select: '&f╪'
 
 default:
   compass-target: '&f◇'
