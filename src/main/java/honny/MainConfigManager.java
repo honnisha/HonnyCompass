@@ -43,11 +43,13 @@ public class MainConfigManager {
     @Getter private final String symbolStart;
     @Getter private final String symbolEnd;
 
-    @Getter private final String titlePrefix;
+    @Getter private final String titleMessage;
+    @Getter private final String titleMessageSelected;
 
     @Getter private final BarColor barColor;
     @Getter private final BarStyle barStyle;
 
+    @Getter private final int compassLocationsUpdateDelaySeconds;
     @Getter private final int ticksUpdateCompass;
     @Getter private final double yDifferenceIcons;
 
@@ -100,11 +102,13 @@ public class MainConfigManager {
         symbolStart = getString(config, "symbol-start", "&e&l╠");
         symbolEnd = getString(config, "symbol-end", "&e&l╠");
 
-        titlePrefix = getString(config, "title-prefix", "&6");
+        titleMessage = getString(config, "title-message", "&6{name} &e{distance} м.");
+        titleMessageSelected = getString(config, "title-message-selected", "&a{name} &2{distance} м.");
 
         barColor = BarColor.valueOf(getString(config, "bar-color", "white").toUpperCase(Locale.ROOT));
         barStyle = BarStyle.valueOf(getString(config, "bar-style", "solid").toUpperCase(Locale.ROOT));
 
+        compassLocationsUpdateDelaySeconds = config.getInt("compass-locations-update-delay-seconds", 3);
         ticksUpdateCompass = config.getInt("ticks-update-compass", 20);
         yDifferenceIcons = config.getDouble("y-difference-icons", 10);
 

@@ -12,32 +12,33 @@ west: '&e&lW'
 west-selected: '&6&lW'
 
 fill: '&7═'
-fill-select: '&f╩'
+fill-select: '&f&l╩'
 
 fill-center: '&7╪'
-fill-center-select: '&f╪'
+fill-center-select: '&f&l╪'
 
 default:
   compass-target: '&f◇'
-  compass-target-selected: '&f◆'
+  compass-target-selected: '&f&l◆'
 
   compass-target-above: '&f△'
-  compass-target-selected-above: '&f▲'
+  compass-target-selected-above: '&f&l▲'
 
   compass-target-below: '&f▽'
-  compass-target-selected-below: '&f▼'
+  compass-target-selected-below: '&f&l▼'
 
 selected:
-  compass-target: '&2◇'
-  compass-target-selected: '&a◆'
+  compass-target: '&a◇'
+  compass-target-selected: '&a&l◆'
 
-  compass-target-above: '&2△'
-  compass-target-selected-above: '&a▲'
+  compass-target-above: '&a△'
+  compass-target-selected-above: '&a&l▲'
 
-  compass-target-below: '&2▽'
-  compass-target-selected-below: '&a▼'
+  compass-target-below: '&a▽'
+  compass-target-selected-below: '&a&l▼'
 
-title-prefix: '&6'
+title-message: '&6{name} &e{distance} м.'
+title-message-selected: '&a{name} &2{distance} м.'
 
 symbol-start: '&e&l╠'
 symbol-end: '&e&l╣'
@@ -46,5 +47,6 @@ bar-color: white
 bar-style: solid
 
 ticks-update-compass: 2
+compass-locations-update-delay-seconds: 2
 
 y-difference-icons: 10

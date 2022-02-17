@@ -6,7 +6,9 @@ import honny.commands.CommandsHandler;
 import honny.controllers.PlayerCompass;
 import honny.dependings.betonquest.CompassLocations;
 import honny.handlers.PlayerQuitHandler;
+import honny.handlers.QuestCompassTargetChangeHandler;
 import honny.tasks.CompassUpdater;
+import honny.tasks.PlayerCompassLocationsUpdater;
 import lombok.Getter;
 import org.betonquest.betonquest.BetonQuest;
 import org.bukkit.Bukkit;
@@ -57,9 +59,13 @@ public final class HonnyCompass extends JavaPlugin {
         this.reloadMainConfig();
 
         getServer().getPluginManager().registerEvents(new PlayerQuitHandler(), this);
+        getServer().getPluginManager().registerEvents(new QuestCompassTargetChangeHandler(), this);
 
         CompassUpdater compassUpdater = new CompassUpdater();
         compassUpdater.runTaskTimer(this, 20, 1);
+
+        PlayerCompassLocationsUpdater playerCompassLocationsUpdater = new PlayerCompassLocationsUpdater();
+        playerCompassLocationsUpdater.runTaskTimerAsynchronously(this, 20, 20);
 
         this.getLogger().info("§dPlugin loaded");
     }
