@@ -1,9 +1,10 @@
 package honny.dependings.betonquest;
 
 import honny.HonnyCompass;
+import org.betonquest.betonquest.Backpack;
 import org.betonquest.betonquest.BetonQuest;
+import org.betonquest.betonquest.api.config.QuestPackage;
 import org.betonquest.betonquest.config.Config;
-import org.betonquest.betonquest.config.ConfigPackage;
 import org.betonquest.betonquest.database.PlayerData;
 import org.betonquest.betonquest.utils.PlayerConverter;
 import org.bukkit.Bukkit;
@@ -33,39 +34,39 @@ public class CompassLocations {
     public void reload() {
         locations.clear();
 
-        for (final ConfigPackage pack : Config.getPackages().values()) {
-
-            final ConfigurationSection section = pack.getMain().getConfig().getConfigurationSection("compass");
+        for (final QuestPackage pack : Config.getPackages().values()) {
+            final String packName = pack.getPackagePath();
+            // loop all compass locations
+            final ConfigurationSection section = pack.getConfig().getConfigurationSection("compass");
             if (section != null) {
                 for (final String key : section.getKeys(false)) {
-                    final String location = pack.getString("main.compass." + key + ".location");
+                    final String location = pack.getString("compass." + key + ".location");
                     String name;
                     if (section.isConfigurationSection(key + ".name")) {
-                        name = pack.getString("main.compass." + key + ".name." + Config.getLanguage());
+                        name = pack.getString("compass." + key + ".name." + Config.getLanguage());
                         if (name == null) {
-                            name = pack.getString("main.compass." + key + ".name.en");
+                            name = pack.getString("compass." + key + ".name.en");
                         }
                     } else {
-                        name = pack.getString("main.compass." + key + ".name");
+                        name = pack.getString("compass." + key + ".name");
                     }
                     if (name == null) {
-                        HonnyCompass.getInstance().getLogger().warning("Name not defined in a compass pointer in " + pack.getName() + " package: " + key);
+                        HonnyCompass.getInstance().getLogger().warning("Name not defined in a compass pointer in " + packName + " package: " + key);
                         continue;
                     }
                     if (location == null) {
-                        HonnyCompass.getInstance().getLogger().warning("Location not defined in a compass pointer in " + pack.getName() + " package: " + key);
+                        HonnyCompass.getInstance().getLogger().warning("Location not defined in a compass pointer in " + packName + " package: " + key);
                         continue;
                     }
                     // if the tag is present, continue
                     final String[] parts = location.split(";");
                     if (parts.length != 4) {
-                        HonnyCompass.getInstance().getLogger().warning("Could not parse location in a compass pointer in " + pack.getName() + " package: "
-                                + key);
+                        HonnyCompass.getInstance().getLogger().warning("Could not parse location in a compass pointer in " + packName + " package: " + key);
                         continue;
                     }
                     final World world = Bukkit.getWorld(parts[3]);
                     if (world == null) {
-                        HonnyCompass.getInstance().getLogger().warning("World does not exist in a compass pointer in " + pack.getName() + " package: " + key);
+                        HonnyCompass.getInstance().getLogger().warning("World does not exist in a compass pointer in " + packName + " package: " + key);
                     }
                     final int locX;
                     final int locY;
@@ -75,18 +76,16 @@ public class CompassLocations {
                         locY = Integer.parseInt(parts[1]);
                         locZ = Integer.parseInt(parts[2]);
                     } catch (final NumberFormatException e) {
-                        HonnyCompass.getInstance().getLogger().warning("Could not parse location coordinates in a compass pointer in " + pack.getName() + " package: " + key);
+                        HonnyCompass.getInstance().getLogger().warning("Could not parse location coordinates in a compass pointer in " + packName + " package: " + key);
                         return;
                     }
-                    String slug = pack.getName() + ".compass-" + key;
-                    this.locations.put(slug, new CompassLocation(
-                            new Location(world, locX, locY, locZ),
-                            name
-
-                    ));
+                    final Location loc = new Location(world, locX, locY, locZ);
+                    String bqKey = packName + ".compass-" + key;
+                    this.locations.put(bqKey, new CompassLocation(loc, name));
                 }
             }
         }
+
         HonnyCompass.getInstance().getLogger().info("§dBetonQuest compass locations loaded: " + this.locations.size());
     }
 
