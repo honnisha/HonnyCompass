@@ -58,19 +58,19 @@ public class MainConfigManager {
 
     public MainConfigManager(FileConfiguration config) {
         south = getString(config, "south", "&e&lS");
-        southSelected = getString(config, "north-selected", "&6&lS");
+        southSelected = getString(config, "south-selected", "&6&lS");
         replacers.put(south, southSelected);
 
         west = getString(config, "west", "&e&lW");
-        westSelected = getString(config, "west-selected", "&6&lS");
+        westSelected = getString(config, "west-selected", "&6&lW");
         replacers.put(west, westSelected);
 
         north = getString(config, "north", "&e&lN");
-        northSelected = getString(config, "north-selected", "&6&lS");
+        northSelected = getString(config, "north-selected", "&6&lN");
         replacers.put(north, northSelected);
 
         east = getString(config, "east", "&e&lE");
-        eastSelected = getString(config, "east-selected", "&6&lS");
+        eastSelected = getString(config, "east-selected", "&6&lE");
         replacers.put(east, eastSelected);
 
         fill = getString(config, "fill", "&7═");
