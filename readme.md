@@ -1,20 +1,17 @@
-HonnyCompass
-=======
-The idea is taken from the plugin by autor Caleb Britannia:</br>
-https://github.com/CalebGitBritannia/calebcompass</br>
-</br>
-But it only displays all compass destinations from BetonQuest targets.</br>
-If you select target in `/compass`, then pointer will be highlighted.</br>
-</br>
-Targets has different marks if it is below or above. If you look in mark direction - it will display distance to the target.</br>
-</br>
-I tried to make the compass lightwight as possible.</br>
-</br>
-Dependencies
-=======
-- BetonQuest - compass destinations.</br>
-- AuthMe (optional) - hide compass until login.</br>
-</br>
-Preview:
-=======
-<div align="center"><img src=""/></div>
+## HonnyCompass
+The idea is taken from the plugin by autor Caleb Britannia:
+https://github.com/CalebGitBritannia/calebcompass
+
+But it only displays all compass destinations from BetonQuest targets.
+If you select target in `/compass`, then pointer will be highlighted.
+
+Targets has different marks if it is below or above. If you look in mark direction - it will display distance to the target.
+
+I tried to make the compass lightwight as possible.
+
+## Dependencies
+- BetonQuest - compass destinations.
+- AuthMe (optional) - hide compass until login.
+
+## Preview:
+![preview](https://github.com/honnisha/HonnyCompass/blob/main/preview/Peek-2022-05-07.23-06.gif?raw=true)
