@@ -1,4 +1,6 @@
 ## HonnyCompass
+Spigot plugin for BetonQuest compass.
+
 The idea is taken from the plugin by autor Caleb Britannia:
 https://github.com/CalebGitBritannia/calebcompass
 
@@ -8,6 +10,15 @@ If you select target in `/compass`, then pointer will be highlighted.
 Targets has different marks if it is below or above. If you look in mark direction - it will display distance to the target.
 
 I tried to make the compass lightwight as possible.
+
+## How to use
+Compass displays all targets from `/compass` from config `package.compass` (BetonQuest compass docs: https://docs.betonquest.org/RELEASE/User-Documentation/Events-List/#compass-compass)
+
+It display all user compass directions:
+```
+compass add compass_name
+compass add another_compass_name
+```
 
 ## Dependencies
 - BetonQuest - compass destinations.
