@@ -21,6 +21,11 @@ compass add another_compass_name
 ```
 BetonQuest compass docs: https://docs.betonquest.org/RELEASE/User-Documentation/Events-List/#compass-compass
 
+## Permissions
+```
+honnycompass.reload
+```
+
 ## Dependencies
 - BetonQuest - compass destinations.
 - AuthMe (optional) - hide compass until login.
