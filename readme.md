@@ -11,6 +11,7 @@ Targets has different marks if it is below or above. If you look in mark directi
 
 I tried to make the compass lightwight as possible.
 
+<<<<<<< HEAD
 ## How to use
 Compass displays all targets from `/compass` from config `package.compass` (BetonQuest compass docs: https://docs.betonquest.org/RELEASE/User-Documentation/Events-List/#compass-compass)
 
@@ -19,7 +20,6 @@ It display all user compass directions:
 compass add compass_name
 compass add another_compass_name
 ```
-
 ## Dependencies
 - BetonQuest - compass destinations.
 - AuthMe (optional) - hide compass until login.
