@@ -32,3 +32,6 @@ honnycompass.reload
 
 ## Preview:
 ![preview](https://github.com/honnisha/HonnyCompass/blob/main/preview/Peek-2022-05-07.23-06.gif?raw=true)
+
+# Bugs
+If you encounter a bug, then write about it in the issues section. I'll try to fix it as soon as I have time.

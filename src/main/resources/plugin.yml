@@ -3,9 +3,11 @@ version: '${project.version}'
 main: honny.HonnyCompass
 api-version: 1.18
 
+depend:
+  - BetonQuest
+
 softdepend:
   - AuthMe
-  - BetonQuest
 
 commands:
   honnycompass:
