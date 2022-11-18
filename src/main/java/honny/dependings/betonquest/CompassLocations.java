@@ -1,9 +1,9 @@
 package honny.dependings.betonquest;
 
 import honny.HonnyCompass;
-import org.betonquest.betonquest.Backpack;
 import org.betonquest.betonquest.BetonQuest;
-import org.betonquest.betonquest.api.config.QuestPackage;
+import org.betonquest.betonquest.api.config.quest.QuestPackage;
+import org.betonquest.betonquest.api.profiles.Profile;
 import org.betonquest.betonquest.config.Config;
 import org.betonquest.betonquest.database.PlayerData;
 import org.betonquest.betonquest.utils.PlayerConverter;
@@ -35,7 +35,7 @@ public class CompassLocations {
         locations.clear();
 
         for (final QuestPackage pack : Config.getPackages().values()) {
-            final String packName = pack.getPackagePath();
+            final String packName = pack.getQuestPath();
             // loop all compass locations
             final ConfigurationSection section = pack.getConfig().getConfigurationSection("compass");
             if (section != null) {
@@ -93,12 +93,11 @@ public class CompassLocations {
         List<CompassLocation> compassLocations = new ArrayList<>();
         BetonQuest betonQuest = HonnyCompass.getInstance().getOptionalBetonQuest().get();
 
-        String playerID = PlayerConverter.getID(player.getName());
-        PlayerData playerData = betonQuest.getPlayerData(playerID);
+        Profile profile = PlayerConverter.getID(player);
+        PlayerData playerData = betonQuest.getPlayerData(profile);
 
         for (Map.Entry<String, CompassLocation> entry : this.locations.entrySet()) {
             if (playerData.hasTag(entry.getKey())) {
-
                 compassLocations.add(entry.getValue());
             }
         }

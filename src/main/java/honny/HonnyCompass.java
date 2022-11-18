@@ -11,6 +11,7 @@ import honny.tasks.CompassUpdater;
 import honny.tasks.PlayerCompassLocationsUpdater;
 import lombok.Getter;
 import org.betonquest.betonquest.BetonQuest;
+import org.betonquest.betonquest.api.profiles.Profile;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -92,9 +93,13 @@ public final class HonnyCompass extends JavaPlugin {
         return playerCompass;
     }
 
+    public Optional<PlayerCompass> getCompass(Profile profile) {
+        if (!compasses.containsKey(profile.getPlayer().getUniqueId())) return Optional.empty();
+        return Optional.of(compasses.get(profile.getPlayer().getUniqueId()));
+    }
+
     public Optional<PlayerCompass> getCompass(Player player) {
         if (!compasses.containsKey(player.getUniqueId())) return Optional.empty();
-
         return Optional.of(compasses.get(player.getUniqueId()));
     }
 
