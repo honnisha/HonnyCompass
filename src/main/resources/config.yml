@@ -43,6 +43,12 @@ title-message-selected: '&a{name} &2{distance} м.'
 symbol-start: '&e&l╠'
 symbol-end: '&e&l╣'
 
+prefix-string: '&c%mmocore_health%&7/%mmocore_max_health% +%mmocore_stat_health_regeneration%/с '
+prefix-format-string: '%-10s'
+
+postfix-string: ' &9%mmocore_mana%&7/%mmocore_stat_max_mana% +%mmocore_stat_mana_regeneration%/с'
+postfix-format-string: '%10s'
+
 bar-color: white
 bar-style: solid
 

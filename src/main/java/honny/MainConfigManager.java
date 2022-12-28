@@ -43,6 +43,12 @@ public class MainConfigManager {
     @Getter private final String symbolStart;
     @Getter private final String symbolEnd;
 
+    @Getter private final String prefixString;
+    @Getter private final String prefixFormatString;
+
+    @Getter private final String postfixString;
+    @Getter private final String postfixFormatString;
+
     @Getter private final String titleMessage;
     @Getter private final String titleMessageSelected;
 
@@ -100,7 +106,13 @@ public class MainConfigManager {
         selectedCompassTargetSelectedBelow = getString(config, "selected.compass-target-selected-below", "&a▼");
 
         symbolStart = getString(config, "symbol-start", "&e&l╠");
-        symbolEnd = getString(config, "symbol-end", "&e&l╠");
+        symbolEnd = getString(config, "symbol-end", "&e&l╣");
+
+        prefixString = getString(config, "prefix-string", "%-10s");
+        prefixFormatString = getString(config, "prefix-format-string", "%-10s");
+
+        postfixString = getString(config, "postfix-string", "%10s");
+        postfixFormatString = getString(config, "postfix-format-string", "%10s");
 
         titleMessage = getString(config, "title-message", "&6{name} &e{distance} м.");
         titleMessageSelected = getString(config, "title-message-selected", "&a{name} &2{distance} м.");

@@ -5,6 +5,7 @@ import honny.MainConfigManager;
 import honny.dependings.betonquest.CompassLocations;
 import honny.utils.AngleUtil;
 import lombok.Setter;
+import me.clip.placeholderapi.PlaceholderAPI;
 import org.apache.commons.lang.StringUtils;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -126,7 +127,20 @@ public class PlayerCompass {
         String currentItem = this.compassList.get(10);
         if (mainConfig.getReplacers().containsKey(currentItem)) this.compassList.set(10, mainConfig.getReplacers().get(currentItem));
 
-        String compass = mainConfig.getSymbolStart() + StringUtils.join(this.compassList, "") + mainConfig.getSymbolEnd();
+        String start = "";
+        if (mainConfig.getPrefixString().length() > 0) {
+            String line = PlaceholderAPI.setPlaceholders(player, mainConfig.getPrefixString());
+            PlaceholderAPI.setPlaceholders(player, line);
+            start = String.format(mainConfig.getPrefixFormatString(), line);
+        }
+        String end = "";
+        if (mainConfig.getPostfixString().length() > 0) {
+            String line = PlaceholderAPI.setPlaceholders(player, mainConfig.getPostfixString());
+            PlaceholderAPI.setPlaceholders(player, line);
+            end = String.format(mainConfig.getPostfixFormatString(), line);
+        }
+
+        String compass = start + mainConfig.getSymbolStart() + StringUtils.join(this.compassList, "") + mainConfig.getSymbolEnd() + end;
         bossBarCompass.setTitle(compass);
 
         if (targetName != null) {
