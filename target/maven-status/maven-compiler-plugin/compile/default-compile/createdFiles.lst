@@ -1,0 +1,11 @@
+honny\commands\CommandsComplete.class
+honny\utils\AngleUtil.class
+honny\MainConfigManager.class
+honny\dependings\betonquest\CompassLocations.class
+honny\HonnyCompass.class
+honny\controllers\PlayerCompass.class
+honny\tasks\PlayerCompassLocationsUpdater.class
+honny\dependings\betonquest\CompassLocations$CompassLocation.class
+honny\commands\CommandsHandler.class
+honny\handlers\PlayerQuitHandler.class
+honny\tasks\CompassUpdater.class

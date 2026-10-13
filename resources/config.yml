@@ -1,0 +1,58 @@
+
+north: '&e&lN'
+north-selected: '&6&lN'
+
+east: '&e&lE'
+east-selected: '&6&lE'
+
+south: '&e&lS'
+south-selected: '&6&lS'
+
+west: '&e&lW'
+west-selected: '&6&lW'
+
+fill: '&7═'
+fill-select: '&f&l╩'
+
+fill-center: '&7╪'
+fill-center-select: '&f&l╪'
+
+default:
+  compass-target: '&f◇'
+  compass-target-selected: '&f&l◆'
+
+  compass-target-above: '&f△'
+  compass-target-selected-above: '&f&l▲'
+
+  compass-target-below: '&f▽'
+  compass-target-selected-below: '&f&l▼'
+
+selected:
+  compass-target: '&a◇'
+  compass-target-selected: '&a&l◆'
+
+  compass-target-above: '&a△'
+  compass-target-selected-above: '&a&l▲'
+
+  compass-target-below: '&a▽'
+  compass-target-selected-below: '&a&l▼'
+
+title-message: '&6{name} &e{distance} м.'
+title-message-selected: '&a{name} &2{distance} м.'
+
+symbol-start: '&e&l╠'
+symbol-end: '&e&l╣'
+
+prefix-string: '&c%mmocore_health%&7/%mmocore_max_health% +%mmocore_stat_health_regeneration%/с '
+prefix-format-string: '%-10s'
+
+postfix-string: ' &9%mmocore_mana%&7/%mmocore_stat_max_mana% +%mmocore_stat_mana_regeneration%/с'
+postfix-format-string: '%10s'
+
+bar-color: white
+bar-style: solid
+
+ticks-update-compass: 2
+compass-locations-update-delay-seconds: 2
+
+y-difference-icons: 10

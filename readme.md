@@ -1,5 +1,6 @@
-## HonnyCompass
-Spigot plugin for BetonQuest compass.
+## HonnyCompass 1.21.11
+Spigot plugin for BetonQuest compass 
+Update 1.21.11
 
 The idea is taken from the plugin by autor Caleb Britannia:
 https://github.com/CalebGitBritannia/calebcompass
